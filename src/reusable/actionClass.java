@@ -1,12 +1,12 @@
 package reusable;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.time.Duration;
+import java.util.Properties;
 
 public class actionClass {
 
@@ -88,7 +88,7 @@ public class actionClass {
             WebElement ele = driver.findElement(element);
             Actions action = new Actions(driver);
             action.moveToElement(ele).build().perform();
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         }
         catch(Exception e){e.printStackTrace();
             System.out.println(element+"..... is not present to Scroll...");}
@@ -107,6 +107,22 @@ public class actionClass {
         return text;
     }
 
+    //Capture Screenshot ...
+    public void takeTheScreenShot(String imageName) throws Exception
+    { //Convert Web Driver Object to take Screenshot ...
+        TakesScreenshot scrshot = ((TakesScreenshot) driver);
+
+        //Call getScreenshots method to create Image File ...
+
+        File SrcFile = scrshot.getScreenshotAs((OutputType.FILE));
+
+        // Move Image File to a new Destination ...
+        File DesSrcFile = new File(System.getProperty("user.dir")+"/screenshot/"+imageName+".png");
+
+       //FileUtils.copyFile(SrcFile,DesSrcFile);
+
+
+    }
 
 
 
