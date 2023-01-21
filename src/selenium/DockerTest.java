@@ -24,7 +24,6 @@ public class DockerTest {
      public void launchApplication()
      {
 
-
          System.setProperty("webdriver.chrome.driver","/Users/satwinder/Downloads/chromedriver"); // To set Chrome Driver path in System properties
 
          driver = new ChromeDriver(); // This will launch your Chrome Browser
@@ -44,7 +43,7 @@ public class DockerTest {
      {
         // Hover on Products Header Menu Link
 
-        /*obj.MouserHover(By.xpath("(//a[text()='Products'])[1]"));
+        obj.MouserHover(By.xpath("(//a[text()='Products'])[1]"));
 
          // Mouse Hover on Developer Header Menu Link
 
@@ -52,17 +51,17 @@ public class DockerTest {
 
          //Mouse Hover on Pricing Menu link
 
-         obj.MouserHover(By.xpath("(//a[text()='About Us'])[1]")); */
+         obj.MouserHover(By.xpath("(//a[text()='About Us'])[1]"));
 
          // How many Social Media links are present in Docker Webpage
 
          int medialinkCount = driver.findElements(By.xpath("//ul[@class='social-wrap']/li")).size();
-         // To print All links ..
+         // To print All links ...
          System.out.println("medialinkCount is :"+medialinkCount);
-        /* for (int i = 1; i <= medialinkCount; i++) {
+        for (int i = 1; i <= medialinkCount; i++) {
              String linkName = driver.findElement(By.xpath("(//ul[@class='social-wrap']/li/a/img)[" +i +"]")).getAttribute("src");
              System.out.println("When src is" + " " + i + " " + "Then src name is =>" + linkName);
-         }*/
+         }
 
          // validate 2022 inside copywright text ...
 
